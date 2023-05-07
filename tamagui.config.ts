@@ -64,7 +64,6 @@ const config = createTamagui({
   fonts: {
 
     heading: headingFont,
-
     body: bodyFont,
 
   },

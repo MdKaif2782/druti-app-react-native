@@ -1,12 +1,19 @@
 import React from 'react'
-import { Text } from 'tamagui'
+import { Button, Image, ScrollView, Text } from 'tamagui'
 import { Stack } from 'tamagui'
+import colors from '../../util/theme/colors'
 
-const Auth = () => {
+const Auth = ({navigation}:object) => {
+   
   return (
-    <Stack>
-        <Text>Auth</Text>
-    </Stack>
+    <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false}>
+        <Stack bg="white">
+            <Stack bg={colors.authbg} h="$10" display='flex' ai="center" jc="flex-end">
+                <Text fontSize={18} m="$3">Validating OTP</Text>
+            </Stack>
+            {/* <Image source={{uri:''}}/> */}
+        </Stack>
+    </ScrollView>
   )
 }
 
