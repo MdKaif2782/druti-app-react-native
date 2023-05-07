@@ -7,6 +7,8 @@ import { useColorScheme } from 'react-native'
 import {TamaguiProvider, Theme } from 'tamagui'
 import config from './tamagui.config'
 import Navigator from './screens/Navigator';
+import { Provider } from 'react-redux';
+import { store } from './rtk/store';
 export default function App() {
 
   const colorScheme = useColorScheme()
@@ -18,7 +20,7 @@ export default function App() {
     return null
   }
   return (
-
+    <Provider store={store}>
     <TamaguiProvider config={config}>
       <Theme name={colorScheme === 'dark' ? 'dark' : 'light'}>
         <NavigationContainer>
@@ -26,7 +28,7 @@ export default function App() {
         </NavigationContainer>
       </Theme>
     </TamaguiProvider>
-
+    </Provider>
   )
 
 }
